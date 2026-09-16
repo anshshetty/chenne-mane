@@ -1,0 +1,29 @@
+# Dependencies and local tools
+node_modules/
+.npm/
+.DS_Store
+*.log
+
+# Credentials and local environment
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+.npmrc
+
+# Local agent, hosting and session state
+.openai/
+.sites-runtime/
+.codex/
+.agents/
+*.ses
+
+# Generated local reports and source exports
+.release/
+.reports/
+coverage/
+playwright-report/
+test-results/

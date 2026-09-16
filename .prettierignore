@@ -1,0 +1,12 @@
+.openai/
+.sites-runtime/
+.codex/
+.agents/
+.release/
+.reports/
+node_modules/
+dist/assets/
+LICENSE
+*.ses
+package-lock.json
+.gitleaks.toml

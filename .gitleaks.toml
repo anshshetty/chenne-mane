@@ -1,0 +1,4 @@
+title = "Chenne Mane secret scanning"
+
+[extend]
+useDefault = true

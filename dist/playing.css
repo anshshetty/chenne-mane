@@ -1,0 +1,194 @@
+/* Keep sowing choices beside the wood in every playing view. */
+.sowing-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  min-height: 48px;
+  margin: 0 auto 10px;
+  font-size: 14px;
+}
+.sowing-switch {
+  display: flex;
+  gap: 2px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 2px;
+}
+.sowing-switch button {
+  min-height: 40px;
+  padding: 7px 13px;
+  border-radius: 5px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.sowing-switch button[aria-pressed='true'] {
+  color: var(--ink-on-accent);
+  background: var(--accent);
+}
+.relay-setting {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 44px;
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 13px;
+  white-space: nowrap;
+}
+.relay-setting input,
+.setup-relay-option input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: var(--gold);
+  flex: none;
+}
+.relay-setting[hidden],
+.setup-relay-option[hidden],
+#setup-difficulty[hidden],
+#relay-sow-button[hidden] {
+  display: none !important;
+}
+.setup-relay-option {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 12px 0 0;
+  font-size: 14px;
+  cursor: pointer;
+}
+.setup-relay-option input {
+  margin-top: 2px;
+}
+.setup-relay-option small {
+  display: block;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.relay-sow-button {
+  min-height: 44px;
+  padding: 9px 15px;
+  border: 1px solid var(--gold);
+  border-radius: 6px;
+  background: var(--accent);
+  color: var(--ink-on-accent);
+  font-size: 14px;
+  white-space: nowrap;
+  flex: none;
+}
+#game-surface.awaiting-relay .turn-message {
+  flex-wrap: wrap;
+  gap: 7px 14px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+#game-surface.awaiting-relay .turn-message > div:first-of-type {
+  min-width: 0;
+}
+#game-surface.portrait-board:not(.immersive) .table-surface {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: 56px 48px minmax(330px, 1fr) auto;
+}
+#game-surface.portrait-board:not(.immersive) .sowing-bar {
+  margin: 0;
+  width: 100%;
+}
+#game-surface.portrait-board:not(.immersive) .turn-message {
+  min-height: 54px;
+}
+#game-surface.immersive > .table-surface {
+  grid-template-rows: 68px 48px minmax(0, 1fr) auto;
+}
+#game-surface.immersive .sowing-bar {
+  margin: 0;
+  width: 100%;
+  min-height: 0;
+}
+#game-surface.immersive .turn-message {
+  min-height: 66px;
+  overflow: visible;
+}
+@media (max-width: 650px) {
+  .sowing-bar {
+    gap: 9px;
+    margin-bottom: 4px;
+  }
+  .sowing-switch button {
+    font-size: 13px;
+    padding: 7px 9px;
+  }
+  .relay-setting {
+    font-size: 12px;
+    gap: 5px;
+  }
+  #game-surface.immersive > .table-surface {
+    grid-template-rows: 56px 48px minmax(0, 1fr) auto;
+  }
+  #game-surface.immersive .turn-message {
+    min-height: 64px;
+  }
+  #game-surface.awaiting-relay .turn-message {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    text-align: center;
+  }
+  #game-surface.awaiting-relay #status-detail {
+    display: none;
+  }
+  #game-surface.awaiting-relay .turn-message p {
+    font-size: 14px;
+  }
+  #game-surface.portrait-board #name-1 {
+    font-size: 13px;
+  }
+}
+@media (orientation: landscape) and (max-height: 600px) {
+  #game-surface.immersive > .table-surface {
+    grid-template-rows: 42px 44px minmax(0, 1fr) auto;
+  }
+  #game-surface.immersive .turn-message {
+    min-height: 42px;
+  }
+  #game-surface:not(.immersive) .sowing-bar {
+    margin: 0;
+    min-height: 44px;
+  }
+  .sowing-switch button {
+    min-height: 36px;
+  }
+  .sowing-bar {
+    min-height: 44px;
+  }
+}
+@media (max-width: 350px) {
+  .sowing-bar {
+    gap: 6px;
+  }
+  .sowing-switch button {
+    font-size: 12px;
+    padding: 7px;
+  }
+  .relay-setting {
+    font-size: 12px;
+  }
+}
+
+#name-1 {
+  white-space: normal;
+  line-height: 1.25;
+}
+.bot-avatar {
+  color: var(--gold);
+  font-size: 26px;
+}
+@media (orientation: landscape) and (max-height: 550px) and (min-width: 500px) {
+  #game-surface:not(.immersive) .table-surface {
+    justify-content: flex-start;
+  }
+  #game-surface:not(.immersive) .table-surface > * {
+    flex-shrink: 0;
+  }
+}

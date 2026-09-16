@@ -1,0 +1,21 @@
+{
+  "name": "chenne-mane",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A browser-playable coastal Karnataka shell game with an animated lesson and deterministic rules engine.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run format:check && npm test",
+    "export:public": "node scripts/export-public.mjs"
+  },
+  "devDependencies": {
+    "prettier": "3.9.7"
+  }
+}
